@@ -1,20 +1,20 @@
 package com.example.backend.entity;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_biblioteca")
+@Document(collection = "tb_biblioteca")
 public class BibliotecaModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String frase;
-
+    private String id;
+    private String frasePT;
+    private String fraseEn;
 }
