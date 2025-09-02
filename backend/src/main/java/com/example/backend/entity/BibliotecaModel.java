@@ -15,6 +15,7 @@ public class BibliotecaModel {
 
     @Id
     private String id;
-    private String frasePT;
+    private String frasePt;
     private String fraseEn;
+    private String categoria;
 }
