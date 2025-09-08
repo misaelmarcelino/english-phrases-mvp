@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 @Service
 public class BibliotecaService {
 
+@Autowired
+private TradutorService tradutorService;
+
     @Autowired
     private BibliotecaRepository bibliotecaRepository;
 
@@ -33,4 +36,10 @@ public class BibliotecaService {
         Optional<BibliotecaModel> buscaexata = bibliotecaRepository.findByFrasePt(frase);
         return buscaexata.map(bibliotecaMapper::map).orElse(null);
     }
+
+
+	public FrasesTraduzidas traduzirFrase(String frase) {
+    		return tradutorService.getFrasesTraduzidas(frase);
+	}
+
 }
