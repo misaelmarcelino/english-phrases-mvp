@@ -1,13 +1,55 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="pt-BR">
+<!-- The 'lang' attribute is set to Portuguese to cater to the app's primary language -->
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
+    <title>Traductor de Formalidade</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+    <!-- A compelling title that accurately frames the application's purpose -->
+</head>
+<body>
+    <div id="root">
+        <!-- This div is the predominant mounting point for your React app. -->
+        <header class="header">
+            <h1 class="title">Traductor de Formalidade</h1>
+            <p>Traduza suas frases do português para o inglês em diferentes níveis de formalidade</p>
+        </header>
+
+        <main>
+            <section class="section-1">
+                <h2 id="input-label">Digite sua frase em português</h2>
+                <textarea 
+                    rows="3" 
+                    placeholder="Ex: Eu quero comer um hambúrguer" 
+                    aria-describedby="example-text"
+                ></textarea>
+                <p id="example-text"><strong>Exemplo:</strong> Eu quero comer um hambúrguer</p>
+                <button>Traduzir →</button>
+            </section>
+
+
+            <section aria-labelledby="results-heading" id="section-2" class="results-container">
+                <h2 id="results-heading" class="sr-only">Resultados</h2>
+                <div id="results-grid">
+                    <div class="result-card formal">
+                        <h3 class="formal-title">Formal</h3>
+                        <p>I would like to have a hamburger.</p>
+                    </div>
+                    <div class="result-card informal">
+                        <h3 class="informal-title">Informal</h3>
+                        <p>I wanna eat a burger.</p>
+                    </div>
+                    <div class="result-card polite">
+                        <h3 class="polite-title">Educado</h3>
+                        <p>I would appreciate having a hamburger, please.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <!-- This script tag is the gateway to your React venture. -->
+</body>
 </html>

@@ -5,144 +5,66 @@
  */
 
 body {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Sets the overall dark theme and font style. */
     background-color: #1a1a1a;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
 }
 
 #root {
+    /* The main container for the application. */
     background-color: #242424;
+    border-radius: 1rem;
+    padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 900px;
     width: 90%;
-    height: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.header .title, .header p {
+header h1, header p {
     color: #f0f0f0;
     margin: 0.5rem 0;
 }
 
-.header .title {
-    font-size: 1rem;
+header h1 {
+    font-size: 2rem;
 }
 
-.header p {
-    font-size: 0.7em;
-    margin-bottom: 1rem;
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 main {
-    width: 90%;
-    height: 300px;
+    width: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-main .section-1 {
-    background-color: #333333;
-    width: 70%;
-    height: 200px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1.0rem;
+    gap: 1.5rem;
+}
+
+section {
+    background-color: #333333;
+    padding: 1.5rem;
     border-radius: 0.5rem;
-
+    width: 100%;
 }
-
-.section-1{
-  width: 70%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.section-1 #input-label{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  font-weight: 400;
-  font-size: 12px;
-}
-
-.section-1 button {
-    background-color: #ff6347;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 2rem;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.section-1 #example-text, strong{
-  font-size: 0.8em;
-}
-
-#example-text  button:hover {
-    background-color: #e5533d;
-}
-
-#example-text  button:active {
-    transform: scale(0.98);
-}
-
-
-#section-2 {
-  width: 70%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.results-container  #results-heading{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.results-container  #results-grid{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.results-container  #results-grid .result-card{
-  width: 140px;
-  height: 90px;
-}
-
 
 textarea {
     width: 100%;
-    height: 80px;
     background-color: #444444;
     border: 1px solid #555555;
     color: #f0f0f0;
+    padding: 1rem;
     border-radius: 0.5rem;
     font-size: 1rem;
     resize: none;
@@ -154,16 +76,28 @@ textarea:focus {
     outline: none;
 }
 
-
-#example-text{
-  width: 100%;
-  height: 20px;
+button {
+    background-color: #ff6347;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-#example-text strong{
-  font-size: medium;
+button:hover {
+    background-color: #e5533d;
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
+/* This is the grid layout for the result cards. It is a critical component for the three-column layout. */
 #results-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -202,36 +136,26 @@ textarea:focus {
     background-color: #61dafb;
 }
 
-.result-card .formal-title{
-  color: #61dafb;
-  font-size: 14px;
-}
-
 .result-card.informal h3::before {
     background-color: #ffc107;
-}
-.result-card .informal-title{
-  color: #ffc107;
-  font-size: 14px;
 }
 
 .result-card.polite h3::before {
     background-color: #28a745;
 }
 
-.result-card .polite-title{
-  color:  #28a745;
-  font-size: 14px;
-}
-
 .result-card p {
     margin-top: 0.5rem;
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: #b0b0b0;
     word-wrap: break-word;
 }
 
-
+@media (max-width: 768px) {
+    #results-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .sr-only {
     position: absolute;
