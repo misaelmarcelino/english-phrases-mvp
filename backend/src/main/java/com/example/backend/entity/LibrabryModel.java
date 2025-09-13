@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "tb_biblioteca")
-public class BibliotecaModel {
+public class LibrabryModel {
 
     @Id
     private String id;
