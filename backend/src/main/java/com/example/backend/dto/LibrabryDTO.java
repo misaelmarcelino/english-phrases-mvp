@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BibliotecaDTO {
+public class LibrabryDTO {
 
     private String id;
     private String frasePT;

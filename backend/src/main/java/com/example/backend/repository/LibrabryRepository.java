@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface BibliotecaRepository extends MongoRepository<BibliotecaModel,String> {
+public interface LibrabryRepository extends MongoRepository<BibliotecaModel,String> {
     Optional<BibliotecaModel> findByFrasePt(String frasePt);
 
     @Query("{ 'frasePT': { $regex: ?0, $options: 'i' } }")
