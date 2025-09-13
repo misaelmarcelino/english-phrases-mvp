@@ -1,26 +1,26 @@
 package com.example.backend.mapper;
 
-import com.example.backend.dto.BibliotecaDTO;
-import com.example.backend.entity.BibliotecaModel;
+import com.example.backend.dto.LibrabryDTO;
+import com.example.backend.entity.LibrabryModel;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BibliotecaMapper {
+public class LibrabryMapper {
 
-    public BibliotecaModel map(BibliotecaDTO bibliotecaDTO) {
-        BibliotecaModel bibliotecaModel = new BibliotecaModel();
-        bibliotecaModel.setId(bibliotecaDTO.getId());
-        bibliotecaModel.setFrasePt(bibliotecaDTO.getFrasePT());
-        bibliotecaModel.setFraseEn(bibliotecaDTO.getFraseEn());
-        bibliotecaModel.setCategoria(bibliotecaDTO.getCategoria());
-        return bibliotecaModel;
+    public LibrabryModel map(LibrabryDTO librabryDTO) {
+        LibrabryModel librabryModel = new LibrabryModel();
+        librabryModel.setId(librabryDTO.getId());
+        librabryModel.setFrasePt(librabryDTO.getFrasePT());
+        librabryModel.setFraseEn(librabryDTO.getFraseEn());
+        librabryModel.setCategoria(librabryDTO.getCategoria());
+        return librabryModel;
     }
-    public BibliotecaDTO map(BibliotecaModel model) {
-        BibliotecaDTO bibliotecaDTO = new BibliotecaDTO();
-        bibliotecaDTO.setId(model.getId());
-        bibliotecaDTO.setFrasePT(model.getFrasePt());
-        bibliotecaDTO.setFraseEn(model.getFraseEn());
-        bibliotecaDTO.setCategoria(model.getCategoria());
-        return bibliotecaDTO;
+    public LibrabryDTO map(LibrabryModel model) {
+        LibrabryDTO librabryDTO = new LibrabryDTO();
+        librabryDTO.setId(model.getId());
+        librabryDTO.setFrasePT(model.getFrasePt());
+        librabryDTO.setFraseEn(model.getFraseEn());
+        librabryDTO.setCategoria(model.getCategoria());
+        return librabryDTO;
     }
 }
