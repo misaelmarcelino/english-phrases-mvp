@@ -12,10 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class librabryService {
-
-    @Autowired
-    private TranslateService translateService;
+public class LibrabryService {
 
     @Autowired
     private LibrabryRepository librabryRepository;
@@ -36,10 +33,5 @@ public class librabryService {
         Optional<LibrabryModel> search = librabryRepository.findByFrasePt(phrase);
         return search.map(librabryMapper::map).orElse(null);
     }
-
-
-	public phrasesTraslate translate(String phrases) {
-    		return tradutorService.getFrasesTraduzidas(phrases);
-	}
 
 }
